@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Verilen Sözü Tutma Vakti</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6f61, #ff8a71, #ffb3a7);
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            transition: background 2s ease;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .story, .quote, #letter, #finalMessage, #hearts {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .story.visible, .quote.visible, #letter.visible, #finalMessage.visible, #hearts.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .story {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin: 20px 0;
+            font-size: 1.4em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #d6504a;
+            transform: scale(1.05);
+        }
+
+        #hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif') center/cover no-repeat;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sana Verilen Sözü Tutma Vakti</h1>
+
+    <div class="story visible" id="story1">
+        <h2>Küçük Mucizelerin Gücü</h2>
+        <p>Bir zamanlar, deniz kenarında küçük bir köyde yaşayan bir adam vardı. Adam, yıllardır hastalıkla boğuşan annesi için her gün dua ederdi. Bir gün, hiç beklemediği bir anda, köylerine gelen bir doktor, annesinin hastalığını iyileştirdi. Bu olay, köyde bir mucize olarak kabul edildi. Adam, bu mucizenin gerçekleşmesine inanmasa da, küçük bir umutla dua etmeye devam etmişti. Sonunda, o küçük umudun büyük bir mucizeye dönüştüğünü gördü.</p>
+        <p>"İyi Fındık, sen de hayatında hiç küçük bir umudun büyük bir mucizeye dönüştüğünü görmek istedin mi?"</p>
+        <button onclick="nextStep(2)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote1">
+        <p>Bazen hayatta küçük bir umut, büyük mucizelerin başlangıcı olabilir. Senin inancın, belki de hayatın hiç ummadığın anlarında gerçekleşecek mucizelere kapı açacak.</p>
+    </div>
+
+    <div class="story" id="story2">
+        <h2>Anıların Sonsuz Yankısı</h2>
+        <p>Bir çift, her yıl aynı ağacın altında piknik yaparak anılarını tazeliyordu. Yıllar geçtikçe, bu ağacın altında paylaştıkları anılar onların en değerli hazinesi haline geldi. Yağmurlu günlerde, güneşli sabahlarda, her mevsimde orada buluştular. O ağacın gölgesinde geçirilen her an, onların birlikte kurduğu bir başka unutulmaz anıya dönüştü. Yıllar sonra bile, o anılar, kalplerinde sıcak bir gülümsemeyle hatırlandı.</p>
+        <p>"Bir gün, sen de İyi Fındık gibi biriyle birlikte unutulmaz anılar biriktirmek istedin mi?"</p>
+        <button onclick="nextStep(3)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote2">
+        <p>Unutulmaz anılar, zamanın ötesine geçer ve kalbimizde hep sıcak bir yer bulur. Birlikte biriktirilen her anı, gelecekte dönüp baktığında sana gülümseme getirecek birer hazine olabilir.</p>
+    </div>
+
+    <div class="story" id="story3">
+        <h2>Yan Yana Durmanın Gücü</h2>
+        <p>Bir kasabada yaşayan iki arkadaş, çocukluklarından beri her anı birlikte yaşamışlardı. İyi günlerde birbirlerinin yanında sevinçle dururken, kötü günlerde omuz omuza verip zorluklara karşı birlikte savaştılar. Aralarındaki bağ, zamanla daha da güçlendi ve ne olursa olsun, her zaman birlikte olmanın değerini anladılar. Onlar için, en zor zamanlarda bile yan yana olmak, hayatın en büyük hediyesiydi.</p>
+        <p>"Hayatında, İyi Fındık gibi biriyle her durumda yanında olmayı ve birlikte güçlenmeyi hiç istedin mi?"</p>
+        <button onclick="nextStep(4)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote3">
+        <p>Hayatın zorlukları karşısında, yanında biri olduğunda her şey daha kolay gelir. Yan yana durmanın verdiği güç, her fırtınayı dindirir ve kalpleri daha da yakınlaştırır.</p>
+    </div>
+
+    <div class="story" id="story4">
+        <h2>Hayallerin Peşinden Gidenler</h2>
+        <p>Bir çift, birlikte kurdukları bir hayalin peşinden gitmeye karar verdiler. Küçük bir kasabada, eski bir evi restore edip orada mutlu bir yaşam sürme hayaliydi bu. Yıllar süren çaba ve emekten sonra, hayalleri gerçeğe dönüştü. O eski ev, şimdi onların sıcak yuvası, birlikte kurdukları hayatın somut bir simgesiydi. Hayal ettikleri her şey, birbirlerine olan inançları ve sevgileri sayesinde gerçekleşmişti.</p>
+        <p>"Sen de bir gün İyi Fındık gibi hayallerini biriyle birlikte gerçeğe dönüştürmek istedin mi?"</p>
+        <button onclick="nextStep(5)">Devam</button>
+    </div>
+
+    <div class="quote" id="quote4">
+        <p>Hayaller, onlara inananlarla gerçeğe dönüşür. Birlikte kurulan hayaller ise, en güçlü ve en anlamlı olanlardır; çünkü onların arkasında sevgi ve inanç vardır.</p>
+    </div>
+
+    <div class="story" id="story5">
+        <h2>Tesadüflerin Fısıldadığı Hikayeler</h2>
+        <p>Bir gün, hayatın farklı yollarında yürüyen iki insan, tesadüfen yollarının kesiştiği bir kavşakta buluştular. Her biri kendi hikayelerini taşıyor, umutlar ve anılarla doluydu. Birlikte geçirdikleri zaman içinde, küçük mucizeler yarattılar, unutulmaz anılar biriktirdiler ve her zorlukta birbirlerinin yanında oldular. Sonunda, birlikte kurdukları hayalleri gerçeğe dönüştürmeyi başardılar. Onlar için hayat, tesadüflerle başlayan ve birlikte oluşturulan bir masala dönüşmüştü.</p>
+        <p>"Hayatın sana hiç beklemediğin bir anda birini getirip, onunla bir masal yazmayı istedin mi, İyi Fındık?"</p>
+        <button onclick="showLetter()">Mektubu Göster</button>
+    </div>
+
+    <div id="letter" class="hidden">
+        <h2>Mektup</h2>
+        <p>Hayat, aslında bir dizi ihtimalin bize sunduğu fırsatlar ve sürprizlerle dolu bir yolculuk. Kimi zaman bu ihtimaller öylesine küçük olur ki, onları görmek neredeyse imkansızdır; tıpkı bir kalem ucunun küçücük noktası gibi. Ancak, bu küçücük ihtimallere inanmak ve onlara tutunmak, hayatta karşımıza çıkacak en büyük mucizelere kapı açabilir.</p>
+        <p>Bazen ihtimaller kendi kendine var olmaz; onları biz yaratırız. Küçük bir umut, kararlı bir adım veya bir içten dilek, o minik ihtimali gerçeğe dönüştürebilir. Ben de tam bu noktada, belki de sadece bir kalem noktası kadar küçük olan bu ihtimale inanmaya devam ediyorum. Ona olan inancımı hiç kaybetmiyorum ve bu ihtimali gerçeğe dönüştürmek için elimden gelen her şeyi yapıyorum.</p>
+        <p>İhtimaller, hayata dair en güzel akışlardan biridir ve ne kadar küçük olurlarsa olsunlar, onlara inanmaya devam etmeli ve onların peşinden gitmeliyiz. Çünkü bu yolculukta asıl önemli olan, ihtimallerin büyüklüğü değil, onlara duyduğumuz inanç ve kararlılıktır.</p>
+        <button onclick="showFinalMessage()">Evet</button>
+        <button onclick="showFinalMessage()">Hayır</button>
+    </div>
+
+    <div id="finalMessage" class="hidden">
+        <h3>Teşekkürler!</h3>
+        <p>Sana güvendiğin için çok mutluyum. Bunu sana kanıtlamak için ne olursa olsun yapacağım. Beraber, hayatımızın en güzel yolculuğuna adım attık!</p>
+        <div id="hearts"></div>
+    </div>
+
+    <script>
+        function nextStep(step) {
+            document.querySelector('.story.visible').classList.remove('visible');
+            document.getElementById('quote' + (step - 1)).classList.add('visible');
+
+            setTimeout(() => {
+                document.getElementById('quote' + (step - 1)).classList.remove('visible');
+                document.getElementById('story' + step).classList.add('visible');
+            }, 3000); // 3 saniye bekleme süresi
+        }
+
+        function showLetter() {
+            document.body.style.backgroundColor = "#fff";
+            document.querySelector('.story.visible').classList.remove('visible');
+            document.getElementById('letter').classList.add('visible');
+        }
+
+        function showFinalMessage() {
+            document.getElementById('letter').classList.remove('visible');
+            document.getElementById('finalMessage').classList.add('visible');
+            setTimeout(() => {
+                document.getElementById('hearts').classList.add('visible');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
